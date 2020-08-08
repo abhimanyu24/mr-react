@@ -1,8 +1,13 @@
 {
   "name": "mr-redux",
   "version": "0.0.1",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "module": "src/index.js",
+  "scripts": {
+    "build:webpack": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development --color"
+    
+  },
   "dependencies": {
     "react": "16.13.1",
     "react-dom": "16.13.1",
