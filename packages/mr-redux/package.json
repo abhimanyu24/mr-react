@@ -1,6 +1,6 @@
 {
   "name": "mr-redux",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/index.js",
   "module": "src/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --mode development --color"
   },
   "dependencies": {
-    "mr-helper": "^0.0.2",
+    "mr-helper": "^0.0.3",
     "redux-saga": "^1.1.3"
   },
   "peerDependencies": {
