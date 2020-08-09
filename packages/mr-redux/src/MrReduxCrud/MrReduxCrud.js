@@ -30,6 +30,7 @@ export const nameHandler = {
   pascalCase: (str = "") => pascalCase(str),
   // camelCase: (str = "") => underscore.camelize(str, true),
   camelCase: (str = "") => camelCase(str),
+  
   lowerCase: (str = "") => str.toLowerCase(),
   actionTypeName: (str = "") => {
     this.upCase(str);
