@@ -23,7 +23,7 @@ export function upperCase(str) {
 export function camelCase(str) {
   str = replaceAccents(str);
   str = removeNonWord(str)
-    .replace(/\-/g, " ") //convert all hyphens to spaces
+    .replace(/[\-_]/g, " ") //convert all hyphens to spaces
     .replace(/\s[a-z]/g, upperCase) //convert first char of each word to UPPERCASE
     .replace(/\s+/g, "") //remove spaces
     .replace(/^[A-Z]/g, lowerCase); //convert first char to lowercase
@@ -118,7 +118,9 @@ export function underscore(str) {
  * Remove non-word chars.
  */
 export function removeNonWord(str) {
-  return str.replace(/[^0-9a-zA-Z\xC0-\xFF \-]/g, "");
+  
+  // return str.replace(/[^0-9a-zA-Z\xC0-\xFF \-_]/g, "");
+  return str.replace(/[^0-9a-zA-Z\xC0-\xFF \-_]/g, "");
 }
 
 /**

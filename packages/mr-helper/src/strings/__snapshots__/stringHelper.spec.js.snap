@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stringHelper.js underscores string: user_response 1`] = `"user_response"`;
