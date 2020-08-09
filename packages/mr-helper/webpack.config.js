@@ -117,10 +117,12 @@ const config = {
     minimize: true,
     minimizer: [new TerserPlugin()],
   },
-
   externals: {
-    "redux-saga": "redux-saga"
+    "lodash": "lodash",
+    "pluralize": "pluralize",
+    "query-string": "query-string",
   }
+
 
   // externals: {
   //   react: {

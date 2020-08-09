@@ -1,4 +1,4 @@
-import {pluralize, camelCase, underscore, upperCase, lowerCase, unCamelCase } from "./stringHelper";
+import {pluralize, camelCase, underscore, upperCase, lowerCase, unCamelCase, pascalCase } from "./stringHelper";
 // import * as from "./stringHelper";
 
 describe("stringHelper.js", () => {
@@ -27,6 +27,9 @@ describe("stringHelper.js", () => {
   it('uppercases string', () => {
     expect(upperCase("user_Response")).toEqual("USER_RESPONSE");
   });
+  it('pascalcases string', () => {
+    expect(pascalCase("user_response")).toEqual("UserResponse");
+  });
   it('lowercases string', () => {
     expect(lowerCase("USER_RESPONSE")).toEqual("user_response");
   });
@@ -40,6 +43,10 @@ describe("stringHelper.js", () => {
     // console.log( "unCamelCase('userResponse')", unCamelCase('userResponse') );
     // console.log( "camelCase('user_response')", camelCase('user_response') );
     // expect(underscore(unCamelCase("userResponse"))).toEqual("user_response")
+  });
+  it('unCamelcases string', () => {
+    expect(unCamelCase("user_response")).toEqual("user_response");
+    expect(unCamelCase("userResponse")).toEqual("user response");
   });
   
 });

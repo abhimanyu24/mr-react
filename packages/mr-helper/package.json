@@ -1,10 +1,26 @@
 {
   "name": "mr-helper",
   "version": "0.0.1",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "module": "src/index.js",
+  "scripts": {
+    "build:webpack": "webpack --mode production"
+    
+    
+  },
+  "devDependencies": {
+    "lodash-webpack-plugin": "^0.11.5",
+    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-template": "^6.2.0"
+  },
   "dependencies": {
+    "query-string": "^6.5.0",
+    "pluralize": "^8.0.0",
+    "lodash": "^4.1.0"
   },
   "peerDependencies": {
+    "query-string": "^6.5.0",
+    "pluralize": "^8.0.0",
+    "lodash": "^4.17.11"
   }
 }

@@ -1,3 +1,4 @@
+import {camelCase as lodashCamelCase, capitalize as lodashCapitalize} from "lodash";
 // String utils
 //
 // resources:
@@ -21,13 +22,14 @@ export function upperCase(str) {
  * Convert string to camelCase text.
  */
 export function camelCase(str) {
-  str = replaceAccents(str);
-  str = removeNonWord(str)
-    .replace(/[\-_]/g, " ") //convert all hyphens to spaces
-    .replace(/\s[a-z]/g, upperCase) //convert first char of each word to UPPERCASE
-    .replace(/\s+/g, "") //remove spaces
-    .replace(/^[A-Z]/g, lowerCase); //convert first char to lowercase
-  return str;
+  return lodashCamelCase(str)
+  // str = replaceAccents(str);
+  // str = removeNonWord(str)
+  //   .replace(/[\-_]/g, " ") //convert all hyphens to spaces
+  //   .replace(/\s[a-z]/g, upperCase) //convert first char of each word to UPPERCASE
+  //   .replace(/\s+/g, "") //remove spaces
+  //   .replace(/^[A-Z]/g, lowerCase); //convert first char to lowercase
+  // return str;
 }
 
 /**

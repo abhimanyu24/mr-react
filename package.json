@@ -39,6 +39,7 @@
     "lerna": "^3.22.1",
     "lodash": "^4.17.19",
     "lodash-webpack-plugin": "^0.11.5",
+    "pluralize": "^8.0.0",
     "query-string": "^6.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

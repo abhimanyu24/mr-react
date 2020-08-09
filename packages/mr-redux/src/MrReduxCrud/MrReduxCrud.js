@@ -2,13 +2,15 @@
 // import { nameHandler } from "./reduxHelper";
 import { delay } from "redux-saga";
 import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
-import underscore from "underscore.string";
-import lodash from "lodash";
+// import underscore from "underscore.string";
+// import lodash from "lodash";
+// import { findIndex } from "lodash";
 // import { returnQueryString } from "../helpers/helperMethods";
-import { message } from "antd";
-import queryString from "query-string";
-import { getNested } from "../../utils/validationHelper";
-import { formatJsonApiData } from "../../utils/helperMethods";
+// import { message } from "antd";
+// import queryString from "query-string";
+// import { getNested } from "../../utils/validationHelper";
+// import { formatJsonApiData } from "../../utils/helperMethods";
+import {getNested, formatJsonApiData, pascalCase, camelCase, underscore as underscored, findIndex} from "mr-helper";
 // import {
 //   createActionTypes,
 //   actionCreatorFor,
@@ -24,8 +26,10 @@ let sampleProps = {
 };
 export const nameHandler = {
   upCase: (str = "") => str.toUpperCase(),
-  pascalCase: (str = "") => underscore.classify(str),
-  camelCase: (str = "") => underscore.camelize(str, true),
+  // pascalCase: (str = "") => underscore.classify(str),
+  pascalCase: (str = "") => pascalCase(str),
+  // camelCase: (str = "") => underscore.camelize(str, true),
+  camelCase: (str = "") => camelCase(str),
   lowerCase: (str = "") => str.toLowerCase(),
   actionTypeName: (str = "") => {
     this.upCase(str);
@@ -49,16 +53,23 @@ export const returnActionTypeName = arr => {
     .join("_");
 };
 export const returnCamelCase = arr => {
-  return underscore.camelize(
-    arr
-      .map(str => {
-        if (str && str != "") {
-          return str.toLowerCase();
-        }
-      })
-      .join("_"),
-    true
-  );
+  return camelCase(arr
+    .map(str => {
+      if (str && str != "") {
+        return str.toLowerCase();
+      }
+    })
+    .join("_"));
+  // return underscore.camelize(
+  //   arr
+  //     .map(str => {
+  //       if (str && str != "") {
+  //         return str.toLowerCase();
+  //       }
+  //     })
+  //     .join("_"),
+  //   true
+  // );
 };
 class MrReduxCrud {
   constructor(props) {
@@ -70,7 +81,8 @@ class MrReduxCrud {
     this.eventNames = props.eventNames || ["START", "SUCCESS", "FAIL"];
     this.overrides = props.overrides || { reducer: {} };
     this.axiosInstance = props.axiosInstance;
-    this.message = props.message || message;
+    // this.message = props.message || message;
+    this.message = props.message;
     console.log("this.axiosInstance", this.axiosInstance);
     // if(props.overrides){
     //   for (const key in props.overrides) {
@@ -259,7 +271,7 @@ class MrReduxCrud {
 
               if (action.type.indexOf("SHOW") !== -1) {
                 // updatedResources = apiResource;
-                const idx = lodash.findIndex(updatedResources, {
+                const idx = findIndex(updatedResources, {
                   id: apiResource.id
                 });
                 if (idx !== -1) {
@@ -283,7 +295,7 @@ class MrReduxCrud {
                   `${this.resourceName} successfully created.`
                 );
               } else if (action.type.indexOf("UPDATE") !== -1) {
-                const idx = lodash.findIndex(updatedResources, {
+                const idx = findIndex(updatedResources, {
                   id: apiResource.id
                 });
                 // debugger;
@@ -298,7 +310,7 @@ class MrReduxCrud {
                   isCreateUpdate = true;
                 }
               } else if (action.type.indexOf("DELETE") !== -1) {
-                const idx = lodash.findIndex(updatedResources, {
+                const idx = findIndex(updatedResources, {
                   id: apiResource.id
                 });
                 // debugger;
