@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/abhimanyu/.nvm/versions/node/v12.13.1/bin/node /usr/local/bin/yarn build
+  /Users/abhimanyu/.nvm/versions/node/v12.13.1/bin/node /usr/local/bin/yarn login
 
 PATH: 
   /Users/abhimanyu/.rvm/gems/ruby-2.6.3@rails-6.0.2/bin:/Users/abhimanyu/.rvm/gems/ruby-2.6.3@global/bin:/Users/abhimanyu/.rvm/rubies/ruby-2.6.3/bin:/Users/abhimanyu/.rvm/bin:/Users/abhimanyu/Tools:/usr/local/opt/mysql@5.7/bin:/Users/abhimanyu/Development/flutter/bin:/Users/abhimanyu/.fastlane/bin:/Users/abhimanyu/.fastlane/bin:/Users/abhimanyu/.nvm/versions/node/v12.13.1/bin:/Users/abhimanyu/bin:/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/abhimanyu/.nvm/versions/node/v12.13.1/bin:/Users/abhimanyu/Library/Android/sdk/platform-tools
@@ -14,12 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/abhimanyu/Projects/personal/private_npm_packages/monorepos/mr-react/package.json: Unexpected token / in JSON at position 212
-      at JSON.parse (<anonymous>)
-      at /Users/abhimanyu/.config/yarn/global/node_modules/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/Users/abhimanyu/.config/yarn/global/node_modules/yarn/lib/cli.js:310:30)
-      at /Users/abhimanyu/.config/yarn/global/node_modules/yarn/lib/cli.js:321:13
+  Error: canceled
+      at Interface.<anonymous> (/Users/abhimanyu/.config/yarn/global/node_modules/yarn/lib/cli.js:137008:13)
+      at Interface.emit (events.js:210:5)
+      at Interface._ttyWrite (readline.js:887:16)
+      at ReadStream.onkeypress (readline.js:191:10)
+      at ReadStream.emit (events.js:210:5)
+      at emitKeys (internal/readline/utils.js:433:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1153:36)
+      at ReadStream.emit (events.js:210:5)
+      at addChunk (_stream_readable.js:309:12)
 
 npm manifest: 
   {
@@ -30,8 +35,7 @@ npm manifest:
     ],
     "scripts": {
       "build1": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
-      // "build": "lerna run build:webpack",
-      "build": "lerna exec -- webpack --mode=production",
+      "build": "lerna run build:webpack",
       "webpack_build": "lerna exec -- webpack --mode production",
       "bootstrap": "lerna bootstrap --use-workspaces",
       "dev": "start-storybook -p 5555",
