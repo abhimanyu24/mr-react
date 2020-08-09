@@ -26,6 +26,7 @@ let sampleProps = {
 };
 export const nameHandler = {
   upCase: (str = "") => str.toUpperCase(),
+
   
   // pascalCase: (str = "") => underscore.classify(str),
   pascalCase: (str = "") => pascalCase(str),
