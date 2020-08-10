@@ -1,0 +1,6 @@
+src
+lib
+webpack*
+babel.config.js
+node_modules
+.npmignore

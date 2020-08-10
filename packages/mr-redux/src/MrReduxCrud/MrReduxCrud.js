@@ -77,7 +77,6 @@ export const returnCamelCase = arr => {
 class MrReduxCrud {
   constructor(props) {
     // super(props);
-    
     this.resourceName = props.resourceName;
     this.singleResourceName = props.singleResourceName || this.resourceName;
     this.apiUrl = props.apiUrl;
