@@ -1,5 +1,5 @@
 {
-  "name": "mr-helper",
+  "name": "@aj/mr-helper",
   "version": "0.0.4",
   "main": "dist/index.js",
   "module": "dist/index.js",

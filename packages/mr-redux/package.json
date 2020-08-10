@@ -1,5 +1,5 @@
 {
-  "name": "mr-redux",
+  "name": "@aj/mr-redux",
   "version": "0.0.7",
   "main": "dist/index.js",
   "module": "dist/index.js",
