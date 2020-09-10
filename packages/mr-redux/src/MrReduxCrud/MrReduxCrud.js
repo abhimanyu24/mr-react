@@ -10,7 +10,7 @@ import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 // import queryString from "query-string";
 // import { getNested } from "../../utils/validationHelper";
 // import { formatJsonApiData } from "../../utils/helperMethods";
-import {getNested, formatJsonApiData, pascalCase, camelCase, underscore as underscored, findIndex} from "mr-helper";
+import {getNested, formatJsonApiData, pascalCase, camelCase, underscore as underscored, findIndex} from "@aj/mr-helper";
 // import {
 //   createActionTypes,
 //   actionCreatorFor,

@@ -114,12 +114,33 @@ const config = {
     }),
   ],
   optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
+    // minimize: true,
+    // minimizer: [new TerserPlugin()],
   },
 
   externals: {
-    "redux-saga": "redux-saga"
+    "redux-saga": {
+      commonjs: "redux-saga",
+      commonjs2: "redux-saga",
+      amd: "redux-saga",
+    },
+    "lodash": {
+      commonjs: "lodash",
+      commonjs2: "lodash",
+      amd: "lodash"
+    },
+    "redux-saga/effects": {
+      commonjs: "redux-saga/effects",
+      commonjs2: "redux-saga/effects",
+      amd: "redux-saga/effects",
+    },
+    "@aj/mr-helper": {
+      commonjs: "@aj/mr-helper",
+      commonjs2: "@aj/mr-helper",
+      amd: "@aj/mr-helper"
+    },
+    "pluralize": "pluralize",
+    "query-string": "query-string"
   }
 
   // externals: {

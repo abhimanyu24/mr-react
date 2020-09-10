@@ -7,6 +7,7 @@
   "scripts": {
     "build1": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
     "build": "lerna run build:webpack",
+    "webpack_build1": "lerna exec -- webpack --mode none",
     "webpack_build": "lerna exec -- webpack --mode production",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "dev": "start-storybook -p 5555",
